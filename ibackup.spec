@@ -7,6 +7,7 @@ Group:		Archiving/Backup
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		%{name}-2.27-make-rpm.patch
 URL:		http://www.linuks.mine.nu/ibackup/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 BuildArch:	noarch
 
 %description

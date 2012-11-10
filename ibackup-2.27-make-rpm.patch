@@ -1,0 +1,47 @@
+--- ibackup-2.27/makefile.mdk	2003-10-27 10:37:18.000000000 -0500
++++ ibackup-2.27/makefile	2003-10-27 10:46:59.000000000 -0500
+@@ -21,7 +21,7 @@
+ 
+ install-config:
+ 	if test ! -d $(DESTDIR)/$(CONFDIR) ; then mkdir -p $(DESTDIR)/$(CONFDIR) ; fi
+-	install -m 600 ibackup.conf $(DESTDIR)/etc
++	install -m 644 ibackup.conf $(DESTDIR)/etc
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(BINDIR)/ibackup
+@@ -40,7 +40,7 @@
+ 	pkgtrans -s ./sol/ ibackup-${VERSION}-sol-all.pkg ibackup
+ 
+ rpm:
+-	mkdir -p /usr/src/rpm/SOURCES/
+-	mkdir -p /usr/src/rpm/BUILD
+-	cp ../ibackup-${VERSION}.tar.gz /usr/src/rpm/SOURCES/
++	mkdir -p ~/rpm/SOURCES/
++	mkdir -p ~/rpm/BUILD
++	cp ../ibackup-${VERSION}.tar.gz ~/rpm/SOURCES/
+ 	rpm -bb ibackup.spec
+--- ibackup-2.27/ibackup.spec.mdk	2003-10-27 10:39:00.000000000 -0500
++++ ibackup-2.27/ibackup.spec	2003-10-27 10:41:14.000000000 -0500
+@@ -1,7 +1,7 @@
+ Summary: 	Automated backups (even remote) of machine configurations
+ Name: 		ibackup
+ Version: 	2.27
+-Release: 	1
++Release: 	1mdk
+ License: 	GPL
+ Group:		System/Utilities
+ Source:		%{name}-%{version}.tar.gz
+@@ -37,9 +37,12 @@
+ %doc COPYING changelog *.html *.png *.jpg
+ %{_bindir}/ibackup
+ %{_bindir}/sysconf
+-%config /etc/ibackup.conf
++%config(noreplace) /etc/ibackup.conf
+ %{_mandir}/man1/*
+ 
+ %changelog
++* Mon Oct 27 2003 Stew Benedict <sbenedict@mandrakesoft.com> 2.27-1mdk
++- first mandrake packaging
++
+ * Thu May 22 2003 Henne Vogelsang
+ - Initial RPM release.

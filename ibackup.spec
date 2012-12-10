@@ -43,3 +43,39 @@ make DESTDIR=%{buildroot} install-config
 %{_mandir}/man1/*
 
 
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 2.27-8mdv2011.0
++ Revision: 619538
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 2.27-7mdv2010.0
++ Revision: 429487
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 2.27-6mdv2009.0
++ Revision: 247143
+- rebuild
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 2.27-4mdv2008.1
++ Revision: 140755
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Jan 05 2007 Stew Benedict <sbenedict@mandriva.com> 2.27-4mdv2007.0
++ Revision: 104602
+- Import ibackup
+
+* Fri Jan 05 2007 Stew Benedict <sbenedict@mandriva.com> 2.27-4mdv2007.1
+- rebuild
+
+* Tue Dec 27 2005 Stew Benedict <sbenedict@mandrakesoft.com> 2.27-3mdk
+- rebuild
+
+* Fri Nov 19 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.27-2mdk
+- rebuild
+

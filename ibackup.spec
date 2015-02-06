@@ -1,7 +1,7 @@
 Summary: 	Automated backups (even remote) of machine configurations
 Name: 		ibackup
 Version: 	2.27
-Release: 	%mkrel 8
+Release: 	9
 License: 	GPL
 Group:		Archiving/Backup
 Source:		%{name}-%{version}.tar.bz2
